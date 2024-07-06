@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Operations</h1>
+    <textarea id="inputText" placeholder="Enter your text here..."></textarea>
+    <br>
+    <button onclick="countWords()">Word Count</button>
+    <button onclick="countChars()">Character Count</button>
+    <button onclick="toUpperCase()">To Uppercase</button>
+    <button onclick="toLowerCase()">To Lowercase</button>
+    <button onclick="clearText()">Clear</button>
+    <button onclick="copyText()">Copy</button>
+    <button onclick="removeExtraSpaces()">Remove Extra Spaces</button>
+    <br><br>
+    <h2>Preview:</h2>
+    <div id="preview"></div>
+    <script>
+        function getText() {
+            return document.getElementById("inputText").value;
+        }
+
+        function setText(newText) {
+            document.getElementById("inputText").value = newText;
+            updatePreview();
+        }
+
+        function updatePreview() {
+            document.getElementById("preview").innerText = getText();
+        }
+
+        function countWords() {
+            let text = getText().trim();
+            let wordCount = text === "" ? 0 : text.split(/\s+/).length;
+            alert("Word Count: " + wordCount);
+        }
+
+        function countChars() {
+            let charCount = getText().length;
+            alert("Character Count: " + charCount);
+        }
+
+        function toUpperCase() {
+            setText(getText().toUpperCase());
+        }
+
+        function toLowerCase() {
+            setText(getText().toLowerCase());
+        }
+
+        function clearText() {
+            setText("");
+        }
+
+        function copyText() {
+            let textArea = document.getElementById("inputText");
+            textArea.select();
+            document.execCommand("copy");
+            alert("Text copied to clipboard");
+        }
+
+        function removeExtraSpaces() {
+            let text = getText().replace(/\s+/g, ' ').trim();
+            setText(text);
+        }
+
+        document.getElementById("inputText").addEventListener("input", updatePreview);
+    </script>
+</body>
+</html>

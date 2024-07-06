@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    width: 70%;
+    background-color: #fff;
+    position: relative;
+    bottom: 3%;
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+    margin-top: 40px;
+    line-height: 23px;
+}
+
+.left-section h1 {
+    color: #1877f2;
+    font-size: 5rem;
+}
+
+.left-section p {
+    font-size: 24px;
+}
+
+.right-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 80%;
+    padding: 20px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] 
+    {
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #0d284b;
+    border: 1px solid #b898989e;
+    border-radius: 4px;
+    font-size: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    font-size: 23px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+}
+
+button {
+    padding: 15px;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    font-weight: 600;
+
+}
+button:hover{
+    background-color: #215aa4;
+}
+
+button.create-account {
+    background-color: #42b72a;
+    transition: all 0.5s ease-in-out;
+    width: 60%;
+    margin-left: 6.5rem;
+    font-weight: 600;
+}
+button.create-account:hover {
+    background-color: #34a51e;
+}
+a {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 17px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
+}
+
+p.create-page {
+    font-size: 17px;
+    color: #606770;
+    text-align: center;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Toggle</title>
+    <style>
+        #image-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #image-container img {
+            width: 300px;
+            height: auto;
+        }
+
+        #toggle-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="image-container">
+        <img id="image" src="./images/bg-5.jpg" alt="Image">
+        <button id="toggle-button">Toggle Image</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const image = document.getElementById("image");
+            const button = document.getElementById("toggle-button");
+
+            const image1 = "./images/bg-5.jpg";
+            const image2 = "./images/bg-6.jpg";
+
+            image.setAttribute("data-current-image", image1);
+
+            button.addEventListener("click", () => {
+                const currentImage = image.getAttribute("data-current-image");
+                
+                if (currentImage === image1) {
+                    image.src = image2;
+                    image.setAttribute("data-current-image", image2);
+                } else {
+                    image.src = image1;
+                    image.setAttribute("data-current-image", image1);
+                }
+            });
+        });
+    </script>  
+</body>
+
+</html>
