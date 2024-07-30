@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        #imageSlider {
+            margin: auto;
+            margin-top: 100px;
+            width: 700px;
+            height: 300px;
+            object-fit: cover;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid black;
+        }
+        .btncontainer{
+            margin: auto;
+            margin-top: 50px;
+            width: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        #prevButton ,#nextButton{
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="imageSlider"></div>
+    <div class="btncontainer">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <script>
+        const images = [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOKlGjzrWwpgjTNKjWpaGfY3bb5Z4ztNKEUEABdXOSg-rXavZMosbZwY&s=10',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOKlGjzrWwpgjTNKjWpaGfY3bb5Z4ztNKEUEABdXOSg-rXavZMosbZwY&s=10',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNURh20D7vbhli6_FChhXGDjRuJgP9iXlWA&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuz0iyNUawzE25hEQuSl2oaLgXm_m3ELHBYQ&usqp=CAU',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAWUE-APDjljpicVYu41-zVOlPBuADJ5iDUQ&usqp=CAU'
+
+        ];
+        let currentIndex = 0;
+        const imageSlider = document.getElementById('imageSlider');
+
+        function changeImage(index) {
+            setTimeout(() => {
+                imageSlider.style.backgroundImage = `url(${images[index]})`;
+            }, 500); // Change image after 500ms
+        }
+
+        document.getElementById('prevButton').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            changeImage(currentIndex);
+        });
+
+        document.getElementById('nextButton').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            changeImage(currentIndex);
+        });
+
+        // Initialize the slider with the first image
+        changeImage(currentIndex);
+    </script>
+</body>
+
+</html>
