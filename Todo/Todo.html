@@ -76,10 +76,8 @@
 
             if (taskText !== "") {
                 const taskList = document.getElementById('taskList');
-
                 const li = document.createElement('li');
                 li.textContent = taskText;
-
                 const removeButton = document.createElement('button');
                 removeButton.textContent = "Done";
                 removeButton.onclick = function() {
@@ -88,7 +86,6 @@
 
                 li.appendChild(removeButton);
                 taskList.appendChild(li);
-
                 taskInput.value = "";
             }
         }
