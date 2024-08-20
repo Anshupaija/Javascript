@@ -64,8 +64,8 @@
 </head>
 <body>
     <div>
-        <input type="text" id="taskInput" placeholder="Add new task">
-        <button onclick="addTask()">Add Task</button>
+        <input type="text" id="taskInput" placeholder="New Task">
+        <button onclick="addTask()">Add</button>
         <ul id="taskList"></ul>
     </div>
 
@@ -81,7 +81,7 @@
                 li.textContent = taskText;
 
                 const removeButton = document.createElement('button');
-                removeButton.textContent = "Remove";
+                removeButton.textContent = "Done";
                 removeButton.onclick = function() {
                     taskList.removeChild(li);
                 };
