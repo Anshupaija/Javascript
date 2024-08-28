@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+  </head>
+  <body>
+    <h1>Image Slider</h1>
+    
+    <img id="slider" src="" alt="Image Slider" style="width:300px;height:200px;" />
+    
+    <br/>
+    
+    <button id="prev" onclick="prev()">Prev</button>
+    <button id="next" onclick="next()">Next</button>
+    
+    <script>
+      let images = [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdMaCBL-0cle2KEGEeoMXt6XMQ0_v0VULW6SMsj5zpnCyFmh4fF3sDXF7&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbdMaCBL-0cle2KEGEeoMXt6XMQ0_v0VULW6SMsj5zpnCyFmh4fF3sDXF7&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDMbeHaUTZ1G8XnX8yppW7HKCiFS0dourijg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbS6S2pG4h1OzS1vJdy45cKANTcdbi3hhwISCPxaunLZikGARMDgIbZK0&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbS6S2pG4h1OzS1vJdy45cKANTcdbi3hhwISCPxaunLZikGARMDgIbZK0&s=10"
+      ];
+      
+      let i = -1;
+      let slider = document.getElementById("slider");
+
+      function next() {
+        if (i >= images.length - 1) {
+          i = 0;
+        } else {
+          i++;
+        }
+        slider.src = images[i];
+        console.log(images[i]);
+      }
+
+      function prev() {
+        if (i <= 0) {
+          i = images.length - 1;
+        } else {
+          i--;
+        }
+        slider.src = images[i];
+        console.log(images[i]);
+      }
+      next();
+    </script>
+  </body>
+</html>
